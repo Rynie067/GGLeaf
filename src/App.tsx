@@ -81,6 +81,82 @@ const templates: Template[] = [
     makeLayer('text', { name: 'Main title', text: 'THE JOURNEY', x: 960, y: 520, fontSize: 116, color: '#ffffff', motion: 'zoom', strokeWidth: 2 }),
     makeLayer('rect', { name: 'Underline', x: 960, y: 625, w: 500, h: 10, color: '#e9a7ff', radius: 6, motion: 'slide-left' }),
   ]},
+
+  { id: 'donation', name: 'Donation Alert', category: 'Alerts', tag: 'STREAM', description: 'Donor name and amount reveal', accent: '#63e6be', layers: [
+    makeLayer('rect', { name: 'Alert card', x: 960, y: 540, w: 820, h: 300, color: '#121d25', radius: 32, motion: 'slide-up' }),
+    makeLayer('rect', { name: 'Top accent', x: 960, y: 405, w: 820, h: 12, color: '#63e6be', radius: 6, motion: 'slide-left' }),
+    makeLayer('text', { name: 'Alert title', text: 'NEW DONATION', x: 960, y: 460, fontSize: 34, color: '#63e6be', motion: 'fade' }),
+    makeLayer('text', { name: 'Donor name', text: 'PLAYER_NAME', x: 960, y: 545, fontSize: 68, color: '#ffffff', motion: 'pop' }),
+    makeLayer('text', { name: 'Donation amount', text: '$25.00', x: 960, y: 625, fontSize: 48, color: '#63e6be', motion: 'bounce' }),
+  ]},
+  { id: 'follower', name: 'New Follower', category: 'Alerts', tag: 'STREAM', description: 'A welcome alert for new followers', accent: '#a78bfa', layers: [
+    makeLayer('circle', { name: 'Avatar backdrop', x: 650, y: 540, w: 210, h: 210, color: '#302451', motion: 'zoom' }),
+    makeLayer('text', { name: 'Star icon', text: '★', x: 650, y: 540, fontSize: 104, color: '#c4b5fd', motion: 'bounce' }),
+    makeLayer('rect', { name: 'Follower panel', x: 1120, y: 540, w: 760, h: 220, color: '#171525', radius: 28, motion: 'slide-left' }),
+    makeLayer('text', { name: 'Follower label', text: 'NEW FOLLOWER', x: 1120, y: 485, fontSize: 32, color: '#c4b5fd', motion: 'fade' }),
+    makeLayer('text', { name: 'Follower name', text: 'WELCOME, PLAYER!', x: 1120, y: 565, fontSize: 48, color: '#ffffff', motion: 'pop' }),
+  ]},
+  { id: 'starting', name: 'Stream Starting', category: 'Intros', tag: 'LIVE', description: 'A waiting screen title composition', accent: '#ff8a65', layers: [
+    makeLayer('rect', { name: 'Backdrop card', x: 960, y: 540, w: 1250, h: 500, color: '#171923', radius: 36, motion: 'zoom' }),
+    makeLayer('text', { name: 'Top line', text: 'RYNIETR PRESENTS', x: 960, y: 390, fontSize: 34, color: '#ffad91', motion: 'fade' }),
+    makeLayer('text', { name: 'Main title', text: 'STREAM STARTING', x: 960, y: 520, fontSize: 98, color: '#ffffff', motion: 'slide-up' }),
+    makeLayer('rect', { name: 'Accent underline', x: 960, y: 625, w: 460, h: 10, color: '#ff8a65', radius: 5, motion: 'slide-left' }),
+    makeLayer('text', { name: 'Subtitle', text: 'GET COMFORTABLE', x: 960, y: 710, fontSize: 28, color: '#aeb5c5', motion: 'fade' }),
+  ]},
+  { id: 'victory', name: 'Victory Banner', category: 'Minecraft', tag: 'GAME', description: 'A bold win moment for gameplay', accent: '#f7cc62', layers: [
+    makeLayer('rect', { name: 'Banner', x: 960, y: 540, w: 1120, h: 250, color: '#282117', radius: 22, motion: 'slide-up' }),
+    makeLayer('text', { name: 'Victory title', text: 'VICTORY!', x: 960, y: 500, fontSize: 120, color: '#f7cc62', stroke: '#45371d', strokeWidth: 3, motion: 'bounce' }),
+    makeLayer('text', { name: 'Victory subtitle', text: 'MATCH COMPLETED', x: 960, y: 620, fontSize: 30, color: '#ffffff', motion: 'fade' }),
+  ]},
+  { id: 'stats', name: 'Player Stats', category: 'Minecraft', tag: 'HUD', description: 'Editable player statistics panel', accent: '#70c2ff', layers: [
+    makeLayer('rect', { name: 'Stats panel', x: 960, y: 540, w: 780, h: 490, color: '#111d2a', radius: 28, motion: 'slide-up' }),
+    makeLayer('text', { name: 'Panel title', text: 'PLAYER PROFILE', x: 960, y: 365, fontSize: 34, color: '#70c2ff', motion: 'fade' }),
+    makeLayer('text', { name: 'Player name', text: 'RYNIETR', x: 960, y: 455, fontSize: 70, color: '#ffffff', motion: 'pop' }),
+    makeLayer('text', { name: 'Stat line one', text: 'WINS          128', x: 960, y: 555, fontSize: 38, color: '#dce8f5', motion: 'slide-left' }),
+    makeLayer('text', { name: 'Stat line two', text: 'KILLS          942', x: 960, y: 635, fontSize: 38, color: '#dce8f5', motion: 'slide-left' }),
+    makeLayer('text', { name: 'Stat line three', text: 'LEVEL            50', x: 960, y: 715, fontSize: 38, color: '#70c2ff', motion: 'slide-left' }),
+  ]},
+  { id: 'announcement', name: 'Server Announcement', category: 'Minecraft', tag: 'SERVER', description: 'A reusable server news card', accent: '#9ee46f', layers: [
+    makeLayer('rect', { name: 'Announcement card', x: 960, y: 540, w: 1050, h: 340, color: '#172219', radius: 25, motion: 'zoom' }),
+    makeLayer('text', { name: 'Category', text: 'SERVER NEWS', x: 960, y: 425, fontSize: 32, color: '#9ee46f', motion: 'fade' }),
+    makeLayer('text', { name: 'Headline', text: 'NEW UPDATE!', x: 960, y: 530, fontSize: 92, color: '#ffffff', motion: 'pop' }),
+    makeLayer('text', { name: 'Description', text: 'NEW FEATURES ARE NOW AVAILABLE', x: 960, y: 640, fontSize: 28, color: '#c3d3c2', motion: 'slide-up' }),
+  ]},
+  { id: 'levelup', name: 'Level Up', category: 'Gaming', tag: 'GAME', description: 'A colorful level-up celebration', accent: '#ffce73', layers: [
+    makeLayer('circle', { name: 'Glow circle', x: 960, y: 520, w: 460, h: 460, color: '#4b351b', motion: 'zoom' }),
+    makeLayer('text', { name: 'Level up label', text: 'LEVEL UP', x: 960, y: 420, fontSize: 42, color: '#ffce73', motion: 'fade' }),
+    makeLayer('text', { name: 'Level number', text: '50', x: 960, y: 560, fontSize: 190, color: '#ffffff', stroke: '#75501b', strokeWidth: 5, motion: 'bounce' }),
+    makeLayer('text', { name: 'Level caption', text: 'NEW REWARDS UNLOCKED', x: 960, y: 700, fontSize: 28, color: '#ffce73', motion: 'slide-up' }),
+  ]},
+  { id: 'newsub', name: 'New Subscriber', category: 'YouTube', tag: 'YOUTUBE', description: 'A subscriber celebration card', accent: '#ff6876', layers: [
+    makeLayer('rect', { name: 'Subscribe card', x: 960, y: 540, w: 900, h: 245, color: '#26191e', radius: 32, motion: 'pop' }),
+    makeLayer('text', { name: 'Subscriber label', text: 'THANKS FOR SUBSCRIBING', x: 960, y: 485, fontSize: 32, color: '#ff8992', motion: 'fade' }),
+    makeLayer('text', { name: 'Subscriber name', text: 'NEW SUBSCRIBER', x: 960, y: 575, fontSize: 66, color: '#ffffff', motion: 'bounce' }),
+  ]},
+  { id: 'social', name: 'Like & Share', category: 'Social', tag: 'SOCIAL', description: 'A call to action for your videos', accent: '#8db8ff', layers: [
+    makeLayer('circle', { name: 'Like badge', x: 580, y: 540, w: 210, h: 210, color: '#233c63', motion: 'pop' }),
+    makeLayer('text', { name: 'Like icon', text: '♥', x: 580, y: 535, fontSize: 106, color: '#8db8ff', motion: 'bounce' }),
+    makeLayer('text', { name: 'Like title', text: 'LIKE & SHARE', x: 1130, y: 500, fontSize: 70, color: '#ffffff', align: 'left', motion: 'slide-left' }),
+    makeLayer('text', { name: 'Social caption', text: 'SUPPORT THE VIDEO', x: 1130, y: 590, fontSize: 30, color: '#8db8ff', align: 'left', motion: 'fade' }),
+  ]},
+  { id: 'outro', name: 'Video Outro', category: 'Outros', tag: 'OUTRO', description: 'A clean end card for videos', accent: '#c49aff', layers: [
+    makeLayer('rect', { name: 'Outro panel', x: 960, y: 540, w: 1200, h: 440, color: '#191727', radius: 34, motion: 'fade' }),
+    makeLayer('text', { name: 'Outro title', text: 'THANKS FOR WATCHING', x: 960, y: 455, fontSize: 76, color: '#ffffff', motion: 'slide-up' }),
+    makeLayer('text', { name: 'Outro subtitle', text: 'SUBSCRIBE FOR MORE', x: 960, y: 570, fontSize: 34, color: '#c49aff', motion: 'pop' }),
+    makeLayer('rect', { name: 'Outro accent', x: 960, y: 665, w: 420, h: 9, color: '#c49aff', radius: 5, motion: 'slide-left' }),
+  ]},
+  { id: 'countdown', name: 'Countdown Card', category: 'Stream', tag: 'LIVE', description: 'A customizable countdown title card', accent: '#68d7d0', layers: [
+    makeLayer('rect', { name: 'Countdown panel', x: 960, y: 540, w: 760, h: 390, color: '#142526', radius: 30, motion: 'zoom' }),
+    makeLayer('text', { name: 'Countdown title', text: 'STARTING IN', x: 960, y: 410, fontSize: 36, color: '#68d7d0', motion: 'fade' }),
+    makeLayer('text', { name: 'Countdown value', text: '00:30', x: 960, y: 555, fontSize: 150, color: '#ffffff', motion: 'bounce' }),
+    makeLayer('text', { name: 'Countdown caption', text: 'STAY TUNED', x: 960, y: 680, fontSize: 28, color: '#a5c9c8', motion: 'slide-up' }),
+  ]},
+  { id: 'killfeed', name: 'Kill Feed Card', category: 'Gaming', tag: 'HUD', description: 'A customizable in-game event strip', accent: '#f28d8d', layers: [
+    makeLayer('rect', { name: 'Kill feed plate', x: 960, y: 540, w: 1120, h: 160, color: '#21191f', radius: 16, motion: 'slide-left' }),
+    makeLayer('text', { name: 'Attacker', text: 'PLAYER_ONE', x: 560, y: 540, fontSize: 42, color: '#ffffff', motion: 'fade' }),
+    makeLayer('text', { name: 'Event marker', text: '✦', x: 960, y: 540, fontSize: 48, color: '#f28d8d', motion: 'pop' }),
+    makeLayer('text', { name: 'Target', text: 'PLAYER_TWO', x: 1360, y: 540, fontSize: 42, color: '#c6cbd5', motion: 'slide-up' }),
+  ]},
 ];
 
 const initialProject: Project = { name: 'Untitled composition', width: 1920, height: 1080, fps: 60, duration: 6, background: '#0d111a', transparent: true };
@@ -163,7 +239,7 @@ function App() {
   const [notice, setNotice] = useState('');
   const [exporting, setExporting] = useState(false);
   const selected = layers.find((l) => l.id === selectedId) || null;
-  const categories = ['All', 'Minecraft', 'YouTube', 'Intros'];
+  const categories = ['All', 'Minecraft', 'YouTube', 'Alerts', 'Gaming', 'Stream', 'Intros', 'Social', 'Outros'];
   const filteredTemplates = useMemo(() => templates.filter((t) => (category === 'All' || t.category === category) && (t.name.toLowerCase().includes(search.toLowerCase()) || t.description.toLowerCase().includes(search.toLowerCase()))), [category, search]);
 
   const render = useCallback((time = playhead) => {
