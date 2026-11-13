@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Circle, Clock3, Download, FileDown, ImagePlus, Layers, Pause, Play,
   Plus, Search, Settings2, Sparkles, Square, Trash2, Type, Upload, WandSparkles,
@@ -300,7 +300,7 @@ function App() {
             <div className="search-box"><Search size={15} /><input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search animations..." /><kbd>/</kbd></div>
             <div className="category-row">{categories.map((c) => <button key={c} className={category === c ? 'selected' : ''} onClick={() => setCategory(c)}>{c}</button>)}</div>
             <div className="template-list">{filteredTemplates.map((t) => <button className="template-card" key={t.id} onClick={() => applyTemplate(t)}>
-              <div className="template-preview" style={{ '--accent': t.accent } as React.CSSProperties}>
+              <div className="template-preview" style={{ '--accent': t.accent } as CSSProperties}>
                 <div className={'mini-art mini-' + t.id}><span>{t.id === 'money' ? '$100M' : t.id === 'subscribe' ? 'SUBSCRIBE' : t.id === 'kill' ? '25 KILLS' : t.id === 'lower' ? 'RYNIETR' : t.id === 'rank' ? 'LEGEND' : 'THE JOURNEY'}</span></div><span className="template-tag">{t.tag}</span>
               </div><div className="template-meta"><div><strong>{t.name}</strong><p>{t.description}</p></div><span className="template-arrow">↗</span></div>
             </button>)}
@@ -375,7 +375,7 @@ function App() {
               <div className="motion-preview"><Sparkles size={15} /><span>{selected.motion === 'none' ? 'No entrance animation' : selected.motion.replace('-', ' ') + ' entrance'} </span><button onClick={() => { setPlayhead(selected.start); setPlaying(true); }}>Preview</button></div>
             </section>
           </div>}
-          <div className="inspector-footer"><span><span className="status-dot" /> All changes are live</span><button onClick={() => { setLayers(initialLayers.map((l) => ({ ...l, id: uid() }))); setSelectedId(initialLayers[2].id); setNotice('Template reset.'); }}><X size={13} /> Reset</button></div>
+          <div className="inspector-footer"><span><span className="status-dot" /> All changes are live</span><button onClick={() => { const resetLayers = initialLayers.map((l) => ({ ...l, id: uid() })); setLayers(resetLayers); setSelectedId(resetLayers[2]?.id || ''); setPlayhead(0); setNotice('Template reset.'); }}><X size={13} /> Reset</button></div>
         </aside>
       </main>
       {notice && <div className="toast"><Check size={16} /> {notice}</div>}
